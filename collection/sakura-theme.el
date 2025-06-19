@@ -4,7 +4,7 @@
 (let* ((class '((class color) (min-colors 89)))
        (sakura-colors
         '(
-          (bg         . "#18131e")
+(bg         . "#18131e")
           (fg         . "#dd7bdc")
           (cursor     . "#ff65fd")
           (cursor-txt . "#24242e")
@@ -26,6 +26,7 @@
           (br-magenta . "#e90cdd")
           (br-cyan    . "#eeeeee")
           (br-white   . "#cbb6ff")
+          
           ))
 
        ;; Helper to safely get color or 'unspecified
@@ -35,6 +36,7 @@
   (custom-theme-set-faces
    'sakura
 
+   ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg)
                                    :foreground ,(funcall safe-get-color 'fg)))))
    `(cursor ((,class (:background ,(funcall safe-get-color 'cursor)
@@ -50,6 +52,21 @@
                                             :weight bold))))
    `(show-paren-mismatch ((,class (:background ,(funcall safe-get-color 'br-red)
                                                :foreground ,(funcall safe-get-color 'bg)
-                                               :weight bold))))))
+                                               :weight bold))))
+
+   ;; Font lock faces
+   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
+   `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
+   `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
+   `(font-lock-constant-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
+   `(font-lock-doc-face ((,class (:foreground ,(funcall safe-get-color 'br-green) :slant italic))))
+   `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'br-green) :slant italic))))
+   `(font-lock-function-name-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
+   `(font-lock-keyword-face ((,class (:foreground ,(funcall safe-get-color 'magenta) :weight bold))))
+   `(font-lock-preprocessor-face ((,class (:foreground ,(funcall safe-get-color 'br-magenta)))))
+   `(font-lock-string-face ((,class (:foreground ,(funcall safe-get-color 'green)))))
+   `(font-lock-type-face ((,class (:foreground ,(funcall safe-get-color 'yellow)))))
+   `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'br-red) :weight bold))))))
 
 (provide-theme 'sakura)

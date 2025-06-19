@@ -1,9 +1,10 @@
 (deftheme grub_darker
-  "Grub Darker theme generated from given palette.")
+  "grub_darker-inspired color theme for Emacs.")
 
 (let* ((class '((class color) (min-colors 89)))
-       (grub-darker-colors
-        '((bg          . "#181818")
+       (grub_darker-colors
+        '(
+(bg          . "#181818")
           (fg          . "#e4e4e4")
           (cursor      . "#ffdd33")
           (cursor-txt  . "#ffffff")
@@ -24,10 +25,12 @@
           (br-blue     . "#96a6c8")
           (br-magenta  . "#afafd7")
           (br-cyan     . "#95a99f")
-          (br-white    . "#f5f5f5")))
+          (br-white    . "#f5f5f5"
+          ))
 
+       ;; Helper to safely get color or 'unspecified
        (safe-get-color (lambda (key)
-                         (or (cdr (assoc key grub-darker-colors)) 'unspecified))))
+                         (or (cdr (assoc key grub_darker-colors)) 'unspecified))))
 
   (custom-theme-set-faces
    'grub_darker
@@ -48,6 +51,21 @@
                                             :weight bold))))
    `(show-paren-mismatch ((,class (:background ,(funcall safe-get-color 'br-red)
                                                :foreground ,(funcall safe-get-color 'bg)
-                                               :weight bold))))))
+                                               :weight bold))))
+
+   ;; Font lock faces
+   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
+   `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
+   `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
+   `(font-lock-constant-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
+   `(font-lock-doc-face ((,class (:foreground ,(funcall safe-get-color 'br-green) :slant italic))))
+   `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'br-green) :slant italic))))
+   `(font-lock-function-name-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
+   `(font-lock-keyword-face ((,class (:foreground ,(funcall safe-get-color 'magenta) :weight bold))))
+   `(font-lock-preprocessor-face ((,class (:foreground ,(funcall safe-get-color 'br-magenta)))))
+   `(font-lock-string-face ((,class (:foreground ,(funcall safe-get-color 'green)))))
+   `(font-lock-type-face ((,class (:foreground ,(funcall safe-get-color 'yellow)))))
+   `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'br-red) :weight bold))))))
 
 (provide-theme 'grub_darker)

@@ -1,37 +1,41 @@
 (deftheme solarized_light
-  "Solarized light theme with toned down, less flashy colors.")
+  "Solarized Light theme - Ethan Schoonover's precision color scheme.")
 
 (let* ((class '((class color) (min-colors 89)))
        (solarized_light-colors
-        '((bg         . "#fef9e6")  ;; slightly lighter and softer background
-          (fg         . "#6b7c82")  ;; softer gray-blue foreground
-          (cursor     . "#6b7c82")  ;; match fg for cursor
-          (cursor-txt . "#f3ecd7")  ;; soft cream for cursor text
-          (selection  . "#f3ecd7")  ;; very soft selection bg
-          (selection-fg . "#526668") ;; muted selection fg
-          (black      . "#173c48")  ;; softened black (dark blue-gray)
-          (red        . "#c94e48")  ;; toned down red
-          (green      . "#798c31")  ;; softened green
-          (yellow     . "#a98f23")  ;; toned down mustard yellow
-          (blue       . "#4a8ccf")  ;; softer blue
-          (magenta    . "#b85575")  ;; toned down magenta
-          (cyan       . "#339088")  ;; softened cyan
-          (white      . "#f3ecd7")  ;; soft off-white
-          (br-black   . "#1f383f")  ;; soft dark slate
-          (br-red     . "#b6633d")  ;; toned down br-red
-          (br-green   . "#526668")  ;; muted br-green
-          (br-yellow  . "#6b7c82")  ;; muted br-yellow (same as fg)
-          (br-blue    . "#7a80b5")  ;; soft periwinkle blue
-          (br-magenta . "#7a80b5")  ;; same as br-blue
-          (br-cyan    . "#7c8d8a")  ;; soft teal gray
-          (br-white   . "#fef9e6")))
+        '(
+          (bg         . "#fdf6e3")  ;; Base 3 - background
+          (fg         . "#657b83")  ;; Base 00 - primary content
+          (cursor     . "#586e75")  ;; Base 01 - emphasized content
+          (cursor-txt . "#fdf6e3")  ;; Base 3 - background
+          (selection  . "#eee8d5")  ;; Base 2 - selection
+          (selection-fg . "#586e75")  ;; Base 01 - emphasized content
+          (black      . "#073642")  ;; Base 02 - dark content
+          (red        . "#dc322f")  ;; Red - error
+          (green      . "#859900")  ;; Green - success
+          (yellow     . "#b58900")  ;; Yellow - warning
+          (blue       . "#268bd2")  ;; Blue - primary
+          (magenta    . "#d33682")  ;; Magenta - special
+          (cyan       . "#2aa198")  ;; Cyan - strings
+          (white      . "#fdf6e3")  ;; Base 3 - background
+          (br-black   . "#93a1a1")  ;; Base 1 - comments
+          (br-red     . "#cb4b16")  ;; Orange - keywords
+          (br-green   . "#859900")  ;; Green - success
+          (br-yellow  . "#b58900")  ;; Yellow - warning
+          (br-blue    . "#268bd2")  ;; Blue - primary
+          (br-magenta . "#6c71c4")  ;; Violet - rare
+          (br-cyan    . "#2aa198")  ;; Cyan - strings
+          (br-white   . "#fdf6e3")  ;; Base 3 - background
+          ))
 
+       ;; Helper to safely get color or 'unspecified
        (safe-get-color (lambda (key)
                          (or (cdr (assoc key solarized_light-colors)) 'unspecified))))
 
   (custom-theme-set-faces
    'solarized_light
 
+   ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg)
                                    :foreground ,(funcall safe-get-color 'fg)))))
    `(cursor ((,class (:background ,(funcall safe-get-color 'cursor)
@@ -42,11 +46,26 @@
    `(fringe ((,class (:background ,(funcall safe-get-color 'bg)))))
    `(minibuffer-prompt ((,class (:foreground ,(funcall safe-get-color 'blue)
                                              :weight bold))))
-   `(show-paren-match ((,class (:background ,(funcall safe-get-color 'br-yellow)
+   `(show-paren-match ((,class (:background ,(funcall safe-get-color 'br-cyan)
                                             :foreground ,(funcall safe-get-color 'bg)
                                             :weight bold))))
-   `(show-paren-mismatch ((,class (:background ,(funcall safe-get-color 'br-red)
+   `(show-paren-mismatch ((,class (:background ,(funcall safe-get-color 'red)
                                                :foreground ,(funcall safe-get-color 'bg)
-                                               :weight bold))))))
+                                               :weight bold))))
+
+   ;; Font lock faces - carefully tuned for Solarized Light style
+   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
+   `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
+   `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
+   `(font-lock-constant-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
+   `(font-lock-doc-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
+   `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
+   `(font-lock-function-name-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
+   `(font-lock-keyword-face ((,class (:foreground ,(funcall safe-get-color 'br-red) :weight bold))))
+   `(font-lock-preprocessor-face ((,class (:foreground ,(funcall safe-get-color 'br-magenta)))))
+   `(font-lock-string-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
+   `(font-lock-type-face ((,class (:foreground ,(funcall safe-get-color 'yellow)))))
+   `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
+   `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'red) :weight bold))))))
 
 (provide-theme 'solarized_light)

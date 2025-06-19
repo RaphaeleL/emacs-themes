@@ -1,31 +1,31 @@
 (deftheme gruvboxdark
-  "gruvboxdark-inspired color theme for Emacs.")
+  "Gruvbox Dark theme - Retro groove color scheme.")
 
 (let* ((class '((class color) (min-colors 89)))
        (gruvboxdark-colors
         '(
-          (bg         . "#282828")
-          (fg         . "#ebdbb2")
-          (cursor     . "#ebdbb2")
-          (cursor-txt . "#282828")
-          (selection  . "#665c54")
-          (selection-fg . "#ebdbb2")
-          (black      . "#282828")
-          (red        . "#cc241d")
-          (green      . "#98971a")
-          (yellow     . "#d79921")
-          (blue       . "#458588")
-          (magenta    . "#b16286")
-          (cyan       . "#689d6a")
-          (white      . "#a89984")
-          (br-black   . "#928374")
-          (br-red     . "#fb4934")
-          (br-green   . "#b8bb26")
-          (br-yellow  . "#fabd2f")
-          (br-blue    . "#83a598")
-          (br-magenta . "#d3869b")
-          (br-cyan    . "#8ec07c")
-          (br-white   . "#ebdbb2")
+          (bg         . "#282828")  ;; Gruvbox Dark background
+          (fg         . "#ebdbb2")  ;; Gruvbox Dark foreground
+          (cursor     . "#ebdbb2")  ;; Gruvbox Dark cursor
+          (cursor-txt . "#282828")  ;; Gruvbox Dark cursor text
+          (selection  . "#504945")  ;; Gruvbox Dark selection
+          (selection-fg . "#ebdbb2")  ;; Gruvbox Dark selection fg
+          (black      . "#282828")  ;; Gruvbox Dark black
+          (red        . "#cc241d")  ;; Gruvbox Dark red
+          (green      . "#98971a")  ;; Gruvbox Dark green
+          (yellow     . "#d79921")  ;; Gruvbox Dark yellow
+          (blue       . "#458588")  ;; Gruvbox Dark blue
+          (magenta    . "#b16286")  ;; Gruvbox Dark magenta
+          (cyan       . "#689d6a")  ;; Gruvbox Dark cyan
+          (white      . "#a89984")  ;; Gruvbox Dark white
+          (br-black   . "#928374")  ;; Gruvbox Dark comment
+          (br-red     . "#fb4934")  ;; Gruvbox Dark bright red
+          (br-green   . "#b8bb26")  ;; Gruvbox Dark bright green
+          (br-yellow  . "#fabd2f")  ;; Gruvbox Dark bright yellow
+          (br-blue    . "#83a598")  ;; Gruvbox Dark bright blue
+          (br-magenta . "#d3869b")  ;; Gruvbox Dark bright magenta
+          (br-cyan    . "#8ec07c")  ;; Gruvbox Dark bright cyan
+          (br-white   . "#ebdbb2")  ;; Gruvbox Dark bright white
           ))
 
        ;; Helper to safely get color or 'unspecified
@@ -35,6 +35,7 @@
   (custom-theme-set-faces
    'gruvboxdark
 
+   ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg)
                                    :foreground ,(funcall safe-get-color 'fg)))))
    `(cursor ((,class (:background ,(funcall safe-get-color 'cursor)
@@ -45,11 +46,26 @@
    `(fringe ((,class (:background ,(funcall safe-get-color 'bg)))))
    `(minibuffer-prompt ((,class (:foreground ,(funcall safe-get-color 'blue)
                                              :weight bold))))
-   `(show-paren-match ((,class (:background ,(funcall safe-get-color 'br-yellow)
+   `(show-paren-match ((,class (:background ,(funcall safe-get-color 'br-blue)
                                             :foreground ,(funcall safe-get-color 'bg)
                                             :weight bold))))
-   `(show-paren-mismatch ((,class (:background ,(funcall safe-get-color 'br-red)
+   `(show-paren-mismatch ((,class (:background ,(funcall safe-get-color 'red)
                                                :foreground ,(funcall safe-get-color 'bg)
-                                               :weight bold))))))
+                                               :weight bold))))
+
+   ;; Font lock faces - carefully tuned for Gruvbox Dark style
+   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'br-blue)))))
+   `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
+   `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
+   `(font-lock-constant-face ((,class (:foreground ,(funcall safe-get-color 'br-magenta)))))
+   `(font-lock-doc-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
+   `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'br-yellow) :slant italic))))
+   `(font-lock-function-name-face ((,class (:foreground ,(funcall safe-get-color 'br-green)))))
+   `(font-lock-keyword-face ((,class (:foreground ,(funcall safe-get-color 'br-red) :weight bold))))
+   `(font-lock-preprocessor-face ((,class (:foreground ,(funcall safe-get-color 'br-magenta)))))
+   `(font-lock-string-face ((,class (:foreground ,(funcall safe-get-color 'br-green)))))
+   `(font-lock-type-face ((,class (:foreground ,(funcall safe-get-color 'br-yellow) :slant italic))))
+   `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'br-white)))))
+   `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'br-red) :weight bold))))))
 
 (provide-theme 'gruvboxdark)
