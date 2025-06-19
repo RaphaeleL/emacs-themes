@@ -84,6 +84,7 @@
                                                :foreground ,(funcall safe-get-color 'bg)
                                                :weight bold))))
    `(mode-line-emphasis ((,class (:weight bold))))
-   `(mode-line-buffer-id ((,class (:foreground ,(funcall safe-get-color 'magenta) :weight bold))))))
+   `(mode-line-buffer-id ((,class (:foreground ,(funcall safe-get-color 'magenta) :weight bold))))
+))
 
 (provide-theme 'molokai)

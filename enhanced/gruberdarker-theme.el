@@ -83,6 +83,7 @@
                                                :foreground ,(funcall safe-get-color 'bg)
                                                :weight bold))))
    `(mode-line-emphasis ((,class (:weight bold))))
-   `(mode-line-buffer-id ((,class (:foreground ,(funcall safe-get-color 'yellow) :weight bold))))))
+   `(mode-line-buffer-id ((,class (:foreground ,(funcall safe-get-color 'yellow) :weight bold))))
+))
 
 (provide-theme 'gruberdarker)

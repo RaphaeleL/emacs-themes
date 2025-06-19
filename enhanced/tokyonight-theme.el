@@ -66,7 +66,7 @@
    `(font-lock-string-face ((,class (:foreground ,(funcall safe-get-color 'yellow)))))
    `(font-lock-type-face ((,class (:foreground ,(funcall safe-get-color 'br-magenta)))))
    `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'br-white)))))
-   `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'red) :weight bold)))))
+   `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'red) :weight bold))))
 
    ;; Modeline faces - Tokyo Night style
    `(mode-line ((,class (:background ,(funcall safe-get-color 'bg)
@@ -77,6 +77,7 @@
                                                :foreground ,(funcall safe-get-color 'bg)
                                                :weight bold))))
    `(mode-line-emphasis ((,class (:weight bold))))
-   `(mode-line-buffer-id ((,class (:foreground ,(funcall safe-get-color 'blue) :weight bold))))))
+   `(mode-line-buffer-id ((,class (:foreground ,(funcall safe-get-color 'blue) :weight bold))))
+))
 
 (provide-theme 'tokyonight)
