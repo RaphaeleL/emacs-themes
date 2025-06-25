@@ -8,7 +8,7 @@
           (fg         . "#e4e4e4")  ;; Light gray text
           (cursor     . "#ffdd33")  ;; Main color: yellow
           (cursor-txt . "#181818")  ;; Dark background for cursor text
-          (selection  . "#2c2c2c")  ;; Slightly lighter than bg for selection
+          (selection  . "#5c5c5c")  ;; Slightly lighter than bg for selection
           (selection-fg . "#e4e4e4")  ;; Same as fg for consistency
           (black      . "#282828")  ;; Softer black
           (red        . "#f43841")  ;; Vibrant red
