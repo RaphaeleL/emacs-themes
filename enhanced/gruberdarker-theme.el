@@ -8,7 +8,7 @@
           (fg         . "#e4e4e4")  ;; Light gray text
           (cursor     . "#ffdd33")  ;; Main color: yellow
           (cursor-txt . "#181818")  ;; Dark background for cursor text
-          (selection  . "#5c5c5c")  ;; Slightly lighter than bg for selection
+          (selection  . "#2c2c2c")  ;; Slightly lighter than bg for selection
           (selection-fg . "#e4e4e4")  ;; Same as fg for consistency
           (black      . "#282828")  ;; Softer black
           (red        . "#f43841")  ;; Vibrant red
@@ -46,12 +46,12 @@
    `(fringe ((,class (:background ,(funcall safe-get-color 'bg)))))
    `(minibuffer-prompt ((,class (:foreground ,(funcall safe-get-color 'yellow)
                                              :weight bold))))
-   `(show-paren-match ((,class (:background ,(funcall safe-get-color 'br-yellow)
-                                            :foreground ,(funcall safe-get-color 'bg)
-                                            :weight bold))))
-   `(show-paren-mismatch ((,class (:background ,(funcall safe-get-color 'br-red)
-                                               :foreground ,(funcall safe-get-color 'bg)
-                                               :weight bold))))
+   ;; `(show-paren-match ((,class (:background ,(funcall safe-get-color 'br-yellow)
+   ;;                                          :foreground ,(funcall safe-get-color 'bg)
+   ;;                                          :weight bold))))
+   ;; `(show-paren-mismatch ((,class (:background ,(funcall safe-get-color 'br-red)
+   ;;                                             :foreground ,(funcall safe-get-color 'bg)
+   ;;                                             :weight bold))))
 
    ;; Line number faces - main color for current line
    `(line-number ((,class (:inherit default

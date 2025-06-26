@@ -46,12 +46,12 @@
    `(fringe ((,class (:background ,(funcall safe-get-color 'bg)))))
    `(minibuffer-prompt ((,class (:foreground ,(funcall safe-get-color 'blue)
                                              :weight bold))))
-   `(show-paren-match ((,class (:background ,(funcall safe-get-color 'br-blue)
-                                            :foreground ,(funcall safe-get-color 'bg)
-                                            :weight bold))))
-   `(show-paren-mismatch ((,class (:background ,(funcall safe-get-color 'red)
-                                               :foreground ,(funcall safe-get-color 'bg)
-                                               :weight bold))))
+   ;; `(show-paren-match ((,class (:background ,(funcall safe-get-color 'br-blue)
+   ;;                                          :foreground ,(funcall safe-get-color 'bg)
+   ;;                                          :weight bold))))
+   ;; `(show-paren-mismatch ((,class (:background ,(funcall safe-get-color 'red)
+   ;;                                             :foreground ,(funcall safe-get-color 'bg)
+   ;;                                             :weight bold))))
 
    ;; Line number faces - main color for current line
    `(line-number ((,class (:inherit default
