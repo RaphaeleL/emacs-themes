@@ -80,9 +80,9 @@
    ;; Modeline faces - Dracula style
    `(mode-line ((,class (:background ,(funcall safe-get-color 'bg)
                                      :foreground ,(funcall safe-get-color 'fg)))))
-   `(mode-line-inactive ((,class (:background ,(funcall safe-get-color 'black)
-                                              :foreground ,(funcall safe-get-color 'br-black)))))
-   `(mode-line-highlight ((,class (:background ,(funcall safe-get-color 'yellow)
+   `(mode-line-inactive ((,class (:background ,(funcall safe-get-color 'bg)
+                                     :foreground ,(funcall safe-get-color 'fg)))))
+   `(mode-line-highlight ((,class (:background ,(funcall safe-get-color 'blue)
                                                :foreground ,(funcall safe-get-color 'bg)
                                                :weight bold))))
    `(mode-line-emphasis ((,class (:weight bold))))

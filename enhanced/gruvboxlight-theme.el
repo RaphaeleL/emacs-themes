@@ -80,8 +80,8 @@
    ;; Modeline faces - Gruvbox Light style
    `(mode-line ((,class (:background ,(funcall safe-get-color 'bg)
                                      :foreground ,(funcall safe-get-color 'fg)))))
-   `(mode-line-inactive ((,class (:background ,(funcall safe-get-color 'selection)
-                                              :foreground ,(funcall safe-get-color 'br-black)))))
+   `(mode-line-inactive ((,class (:background ,(funcall safe-get-color 'bg)
+                                     :foreground ,(funcall safe-get-color 'fg)))))
    `(mode-line-highlight ((,class (:background ,(funcall safe-get-color 'yellow)
                                                :foreground ,(funcall safe-get-color 'bg)
                                                :weight bold))))
