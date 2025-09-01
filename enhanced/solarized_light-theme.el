@@ -5,11 +5,11 @@
        (solarized_light-colors
         '(
           (bg         . "#fdf6e3")  ;; Base 3 - background
-          (fg         . "#657b83")  ;; Base 00 - primary content
+          (fg         . "#2A3133")  ;; Base 00 - primary content
           (cursor     . "#268bd2")  ;; Main color: blue
           (cursor-txt . "#fdf6e3")  ;; Base 3 - background
           (selection  . "#eee8d5")  ;; Base 2 - selection
-          (selection-fg . "#586e75")  ;; Base 01 - emphasized content
+          (selection-fg . "#2A3133")  ;; Base 01 - emphasized content
           (black      . "#073642")  ;; Base 02 - dark content
           (red        . "#dc322f")  ;; Red - error
           (green      . "#859900")  ;; Green - success
