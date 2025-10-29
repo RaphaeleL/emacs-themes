@@ -37,7 +37,7 @@
    ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg) :foreground ,(funcall safe-get-color 'fg)))))
    `(cursor ((,class (:background ,(funcall safe-get-color 'cursor) :foreground ,(funcall safe-get-color 'cursor-txt)))))
-   `(region ((,class (:background ,(funcall safe-get-color 'selection) :foreground ,(funcall safe-get-color 'selection-fg)))))
+   `(region ((,class (:background ,(funcall safe-get-color 'selection)))))
    `(highlight ((,class (:background ,(funcall safe-get-color 'selection)))))
    `(fringe ((,class (:background ,(funcall safe-get-color 'bg)))))
    `(minibuffer-prompt ((,class (:foreground ,(funcall safe-get-color 'yellow) :weight bold))))
