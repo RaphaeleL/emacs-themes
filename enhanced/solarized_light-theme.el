@@ -40,7 +40,7 @@
 
    ;; Line number faces - main color for current line
    `(line-number ((,class (:inherit default :foreground ,(funcall safe-get-color 'black)))))
-   `(line-number-current-line ((,class (:inherit default :foreground ,(funcall safe-get-color 'yellow) :weight bold))))
+   `(line-number-current-line ((,class (:inherit default :foreground ,(funcall safe-get-color 'blue) :weight bold))))
    `(line-number-major-tick ((,class (:foreground ,(funcall safe-get-color 'black)))))
    `(line-number-minor-tick ((,class (:foreground ,(funcall safe-get-color 'black)))))
 
