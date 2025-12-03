@@ -10,7 +10,8 @@
           (cursor-txt . "#fdf6e3")  ;; Base 3 - background
           (selection  . "#eee8d5")  ;; Base 2 - selection
           (black      . "#073642")  ;; Base 02 - dark content
-          (grey       . "#c7c5c6")  ;; Warm grey
+          (grey       . "#d4d4d4")  ;; Warm grey
+          (dgrey      . "#969696")  ;; Dark grey
           (red        . "#dc322f")  ;; Red - error
           (green      . "#859900")  ;; Green - success
           (yellow     . "#b58900")  ;; Yellow - warning
@@ -45,8 +46,8 @@
 
    ;; Font lock faces - carefully tuned for Solarized Light style
    `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
-   `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'cyan) :slant italic))))
-   `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
+   `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'dgrey) :slant italic))))
+   `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'dgrey)))))
    `(font-lock-constant-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
    `(font-lock-doc-face ((,class (:foreground ,(funcall safe-get-color 'black) :slant italic))))
    `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'black) :slant italic))))
