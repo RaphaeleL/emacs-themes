@@ -10,8 +10,8 @@
           (cursor-txt . "#fdf6e3")  ;; Base 3 - background
           (selection  . "#eee8d5")  ;; Base 2 - selection
           (black      . "#073642")  ;; Base 02 - dark content
-          (grey       . "#d4d4d4")  ;; Warm grey
-          (dgrey      . "#969696")  ;; Dark grey
+          (grey_1     . "#d4d4d4")  ;; Light grey (lighter)
+          (grey_2     . "#969696")  ;; Light grey (darker)
           (red        . "#dc322f")  ;; Red - error
           (green      . "#859900")  ;; Green - success
           (yellow     . "#b58900")  ;; Yellow - warning
@@ -39,15 +39,15 @@
    ;; `(show-paren-mismatch ((,class (:background ,(funcall safe-get-color 'red) :foreground ,(funcall safe-get-color 'bg) :weight bold))))
 
    ;; Line number faces - main color for current line
-   `(line-number ((,class (:inherit default :foreground ,(funcall safe-get-color 'black)))))
+   `(line-number ((,class (:inherit default :foreground ,(funcall safe-get-color 'grey_2)))))
    `(line-number-current-line ((,class (:inherit default :foreground ,(funcall safe-get-color 'blue) :weight bold))))
-   `(line-number-major-tick ((,class (:foreground ,(funcall safe-get-color 'black)))))
-   `(line-number-minor-tick ((,class (:foreground ,(funcall safe-get-color 'black)))))
+   `(line-number-major-tick ((,class (:foreground ,(funcall safe-get-color 'grey_2)))))
+   `(line-number-minor-tick ((,class (:foreground ,(funcall safe-get-color 'grey_2)))))
 
    ;; Font lock faces - carefully tuned for Solarized Light style
    `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
-   `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'dgrey) :slant italic))))
-   `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'dgrey)))))
+   `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'grey_2) :slant italic))))
+   `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'grey_2)))))
    `(font-lock-constant-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
    `(font-lock-doc-face ((,class (:foreground ,(funcall safe-get-color 'black) :slant italic))))
    `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'black) :slant italic))))
@@ -67,16 +67,16 @@
    `(mode-line-buffer-id ((,class (:foreground ,(funcall safe-get-color 'yellow) :weight bold))))
 
    ;; Whitespace
-   `(whitespace-space ((,class (:background ,(funcall safe-get-color 'bg) :foreground ,(funcall safe-get-color 'grey)))))
-   `(whitespace-tab ((,class (:background ,(funcall safe-get-color 'bg) :foreground ,(funcall safe-get-color 'grey)))))
-   `(whitespace-hspace ((,class (:background ,(funcall safe-get-color 'bg) :foreground ,(funcall safe-get-color 'grey)))))
+   `(whitespace-space ((,class (:background ,(funcall safe-get-color 'bg) :foreground ,(funcall safe-get-color 'grey_1)))))
+   `(whitespace-tab ((,class (:background ,(funcall safe-get-color 'bg) :foreground ,(funcall safe-get-color 'grey_1)))))
+   `(whitespace-hspace ((,class (:background ,(funcall safe-get-color 'bg) :foreground ,(funcall safe-get-color 'grey_1)))))
    `(whitespace-line ((,class (:background ,(funcall safe-get-color 'black) :foreground ,(funcall safe-get-color 'red)))))
-   `(whitespace-newline ((,class (:background ,(funcall safe-get-color 'bg) :foreground ,(funcall safe-get-color 'grey)))))
+   `(whitespace-newline ((,class (:background ,(funcall safe-get-color 'bg) :foreground ,(funcall safe-get-color 'grey_1)))))
    `(whitespace-trailing ((,class (:background ,(funcall safe-get-color 'red) :foreground ,(funcall safe-get-color 'red)))))
    `(whitespace-empty ((,class (:background ,(funcall safe-get-color 'yellow) :foreground ,(funcall safe-get-color 'yellow)))))
    `(whitespace-indentation ((,class (:background ,(funcall safe-get-color 'yellow) :foreground ,(funcall safe-get-color 'red)))))
    `(whitespace-space-after-tab ((,class (:background ,(funcall safe-get-color 'yellow) :foreground ,(funcall safe-get-color 'yellow)))))
-   `(whitespace-space-before-tab ((,class (:background ,(funcall safe-get-color 'black) :foreground ,(funcall safe-get-color 'greyblack)))))
+   `(whitespace-space-before-tab ((,class (:background ,(funcall safe-get-color 'black) :foreground ,(funcall safe-get-color 'black)))))
 
 ))
 
