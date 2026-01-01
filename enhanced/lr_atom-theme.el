@@ -1,39 +1,39 @@
-(deftheme github_dark
-  "GitHub Dark theme - GitHub's official dark theme for code editors.")
+(deftheme lr_atom
+  "Atom theme - Inspired by the Atom editor's default dark theme.")
 
 (let* ((class '((class color) (min-colors 89)))
-       (github_dark-colors
+       (atom-colors
         '(
-          (bg         . "#0d1117")  ;; GitHub Dark background
-          (fg         . "#c9d1d9")  ;; GitHub Dark foreground
-          (cursor     . "#7ee787")  ;; Main color: green
-          (cursor-txt . "#0d1117")  ;; GitHub Dark cursor text
-          (selection  . "#21262d")  ;; GitHub Dark selection
-          (selection-fg . "#c9d1d9")  ;; GitHub Dark selection fg
-          (black      . "#0d1117")  ;; GitHub Dark black
-          (red        . "#ff7b72")  ;; GitHub Dark red
-          (green      . "#7ee787")  ;; GitHub Dark green - MAIN COLOR
-          (yellow     . "#ffa657")  ;; GitHub Dark yellow
-          (blue       . "#79c0ff")  ;; GitHub Dark blue
-          (magenta    . "#d2a8ff")  ;; GitHub Dark magenta
-          (cyan       . "#a5d6ff")  ;; GitHub Dark cyan
-          (white      . "#f0f6fc")  ;; GitHub Dark white
-          (br-black   . "#8b949e")  ;; GitHub Dark comment
-          (br-red     . "#ff7b72")  ;; GitHub Dark bright red
-          (br-green   . "#7ee787")  ;; GitHub Dark bright green
-          (br-yellow  . "#ffa657")  ;; GitHub Dark bright yellow
-          (br-blue    . "#79c0ff")  ;; GitHub Dark bright blue
-          (br-magenta . "#d2a8ff")  ;; GitHub Dark bright magenta
-          (br-cyan    . "#a5d6ff")  ;; GitHub Dark bright cyan
-          (br-white   . "#f0f6fc")  ;; GitHub Dark bright white
+          (bg         . "#161719")  ;; Atom background
+          (fg         . "#c5c8c6")  ;; Atom foreground
+          (cursor     . "#b5bd68")  ;; Main color: green
+          (cursor-txt . "#161719")  ;; Atom cursor text
+          (selection  . "#373b41")  ;; Atom selection
+          (selection-fg . "#c5c8c6")  ;; Atom selection fg
+          (black      . "#161719")  ;; Atom black
+          (red        . "#cc6666")  ;; Atom red
+          (green      . "#b5bd68")  ;; Atom green - MAIN COLOR
+          (yellow     . "#f0c674")  ;; Atom yellow
+          (blue       . "#81a2be")  ;; Atom blue
+          (magenta    . "#b294bb")  ;; Atom magenta
+          (cyan       . "#8abeb7")  ;; Atom cyan
+          (white      . "#c5c8c6")  ;; Atom white
+          (br-black   . "#969896")  ;; Atom comment
+          (br-red     . "#cc6666")  ;; Atom bright red
+          (br-green   . "#b5bd68")  ;; Atom bright green
+          (br-yellow  . "#f0c674")  ;; Atom bright yellow
+          (br-blue    . "#81a2be")  ;; Atom bright blue
+          (br-magenta . "#b294bb")  ;; Atom bright magenta
+          (br-cyan    . "#8abeb7")  ;; Atom bright cyan
+          (br-white   . "#ffffff")  ;; Atom bright white
           ))
 
        ;; Helper to safely get color or 'unspecified
        (safe-get-color (lambda (key)
-                         (or (cdr (assoc key github_dark-colors)) 'unspecified))))
+                         (or (cdr (assoc key atom-colors)) 'unspecified))))
 
   (custom-theme-set-faces
-   'github_dark
+   'lr_atom
 
    ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg)
@@ -62,8 +62,8 @@
    `(line-number-major-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
    `(line-number-minor-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
 
-   ;; Font lock faces - carefully tuned for GitHub Dark style
-   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
+   ;; Font lock faces - carefully tuned for Atom style
+   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
    `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
    `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
    `(font-lock-constant-face ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
@@ -77,7 +77,7 @@
    `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'br-white)))))
    `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'red) :weight bold))))
 
-   ;; Modeline faces - GitHub Dark style
+   ;; Modeline faces - Atom style
    `(mode-line ((,class (:background ,(funcall safe-get-color 'bg)
                                      :foreground ,(funcall safe-get-color 'fg)))))
    `(mode-line-inactive ((,class (:background ,(funcall safe-get-color 'bg)
@@ -88,4 +88,28 @@
    `(mode-line-emphasis ((,class (:weight bold))))
    `(mode-line-buffer-id ((,class (:foreground ,(funcall safe-get-color 'blue) :weight bold))))
 
-(provide-theme 'github_dark)
+   ;; Whitespace
+   `(whitespace-space ((,class (:background ,(funcall safe-get-color 'bg)
+                                            :foreground ,(funcall safe-get-color 'br-black)))))
+   `(whitespace-tab ((,class (:background ,(funcall safe-get-color 'bg)
+                                          :foreground ,(funcall safe-get-color 'br-black)))))
+   `(whitespace-hspace ((,class (:background ,(funcall safe-get-color 'bg)
+                                             :foreground ,(funcall safe-get-color 'br-black)))))
+   `(whitespace-line ((,class (:background ,(funcall safe-get-color 'br-black)
+                                           :foreground ,(funcall safe-get-color 'red)))))
+   `(whitespace-newline ((,class (:background ,(funcall safe-get-color 'bg)
+                                              :foreground ,(funcall safe-get-color 'br-black)))))
+   `(whitespace-trailing ((,class (:background ,(funcall safe-get-color 'red)
+                                               :foreground ,(funcall safe-get-color 'red)))))
+   `(whitespace-empty ((,class (:background ,(funcall safe-get-color 'yellow)
+                                            :foreground ,(funcall safe-get-color 'yellow)))))
+   `(whitespace-indentation ((,class (:background ,(funcall safe-get-color 'yellow)
+                                                  :foreground ,(funcall safe-get-color 'red)))))
+   `(whitespace-space-after-tab ((,class (:background ,(funcall safe-get-color 'yellow)
+                                                       :foreground ,(funcall safe-get-color 'yellow)))))
+   `(whitespace-space-before-tab ((,class (:background ,(funcall safe-get-color 'br-black)
+                                                        :foreground ,(funcall safe-get-color 'br-black)))))
+
+))
+
+(provide-theme 'lr_atom)

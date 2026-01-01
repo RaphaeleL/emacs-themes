@@ -1,39 +1,39 @@
-(deftheme apple_classic
-  "Apple Classic theme - Inspired by classic Mac OS aesthetics.")
+(deftheme lr_tokyonight
+  "Tokyo Night theme - A clean, dark theme inspired by the city of Tokyo.")
 
 (let* ((class '((class color) (min-colors 89)))
-       (apple_classic-colors
+       (tokyonight-colors
         '(
-          (bg         . "#FFFFFF")  ;; Classic white background
-          (fg         . "#000000")  ;; Pure black text
-          (cursor     . "#0000FF")  ;; Main color: blue
-          (cursor-txt . "#FFFFFF")  ;; White cursor text
-          (selection  . "#B5D5FF")  ;; Classic Mac blue selection
-          (selection-fg . "#000000")  ;; Black selection text
-          (black      . "#000000")  ;; Pure black
-          (red        . "#C41E3A")  ;; Classic Mac red
-          (green      . "#00852B")  ;; Classic Mac green
-          (yellow     . "#C7A500")  ;; Classic Mac yellow
-          (blue       . "#0000FF")  ;; Classic Mac blue - MAIN COLOR
-          (magenta    . "#A020F0")  ;; Classic Mac purple
-          (cyan       . "#0087B4")  ;; Classic Mac cyan
-          (white      . "#FFFFFF")  ;; Pure white
-          (br-black   . "#808080")  ;; Gray for comments
-          (br-red     . "#FF0000")  ;; Bright red
-          (br-green   . "#00A933")  ;; Bright green
-          (br-yellow  . "#FFB700")  ;; Bright yellow
-          (br-blue    . "#0066FF")  ;; Bright blue
-          (br-magenta . "#CC33FF")  ;; Bright magenta
-          (br-cyan    . "#00B7EB")  ;; Bright cyan
-          (br-white   . "#FFFFFF")  ;; Pure white
+          (bg         . "#1a1b26")  ;; Tokyo Night background
+          (fg         . "#a9b1d6")  ;; Tokyo Night foreground
+          (cursor     . "#c0caf5")  ;; Tokyo Night cursor
+          (cursor-txt . "#1a1b26")  ;; Tokyo Night cursor text
+          (selection  . "#33467c")  ;; Tokyo Night selection
+          (selection-fg . "#a9b1d6")  ;; Tokyo Night selection fg
+          (black      . "#1a1b26")  ;; Tokyo Night black
+          (red        . "#f7768e")  ;; Tokyo Night red
+          (green      . "#9ece6a")  ;; Tokyo Night green
+          (yellow     . "#e0af68")  ;; Tokyo Night yellow
+          (blue       . "#7aa2f7")  ;; Tokyo Night blue
+          (magenta    . "#bb9af7")  ;; Tokyo Night magenta
+          (cyan       . "#7dcfff")  ;; Tokyo Night cyan
+          (white      . "#c0caf5")  ;; Tokyo Night white
+          (br-black   . "#565a6e")  ;; Tokyo Night comment
+          (br-red     . "#f7768e")  ;; Tokyo Night bright red
+          (br-green   . "#9ece6a")  ;; Tokyo Night bright green
+          (br-yellow  . "#e0af68")  ;; Tokyo Night bright yellow
+          (br-blue    . "#7aa2f7")  ;; Tokyo Night bright blue
+          (br-magenta . "#bb9af7")  ;; Tokyo Night bright magenta
+          (br-cyan    . "#7dcfff")  ;; Tokyo Night bright cyan
+          (br-white   . "#c0caf5")  ;; Tokyo Night bright white
           ))
 
        ;; Helper to safely get color or 'unspecified
        (safe-get-color (lambda (key)
-                         (or (cdr (assoc key apple_classic-colors)) 'unspecified))))
+                         (or (cdr (assoc key tokyonight-colors)) 'unspecified))))
 
   (custom-theme-set-faces
-   'apple_classic
+   'lr_tokyonight
 
    ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg)
@@ -62,22 +62,22 @@
    `(line-number-major-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
    `(line-number-minor-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
 
-   ;; Font lock faces - carefully tuned for Apple Classic style
-   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
+   ;; Font lock faces - carefully tuned for Tokyo Night style
+   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
    `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
    `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
    `(font-lock-constant-face ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
    `(font-lock-doc-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
-   `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
-   `(font-lock-function-name-face ((,class (:foreground ,(funcall safe-get-color 'blue) :weight bold))))
-   `(font-lock-keyword-face ((,class (:foreground ,(funcall safe-get-color 'br-blue) :weight bold))))
-   `(font-lock-preprocessor-face ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
-   `(font-lock-string-face ((,class (:foreground ,(funcall safe-get-color 'green)))))
+   `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'yellow) :slant italic))))
+   `(font-lock-function-name-face ((,class (:foreground ,(funcall safe-get-color 'green)))))
+   `(font-lock-keyword-face ((,class (:foreground ,(funcall safe-get-color 'blue) :weight bold))))
+   `(font-lock-preprocessor-face ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   `(font-lock-string-face ((,class (:foreground ,(funcall safe-get-color 'yellow)))))
    `(font-lock-type-face ((,class (:foreground ,(funcall safe-get-color 'br-magenta)))))
    `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'br-white)))))
    `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'red) :weight bold))))
 
-   ;; Modeline faces - Apple Classic style
+   ;; Modeline faces - Tokyo Night style
    `(mode-line ((,class (:background ,(funcall safe-get-color 'bg)
                                      :foreground ,(funcall safe-get-color 'fg)))))
    `(mode-line-inactive ((,class (:background ,(funcall safe-get-color 'bg)
@@ -86,7 +86,7 @@
                                                :foreground ,(funcall safe-get-color 'bg)
                                                :weight bold))))
    `(mode-line-emphasis ((,class (:weight bold))))
-   `(mode-line-buffer-id ((,class (:foreground ,(funcall safe-get-color 'blue) :weight bold))))
+   `(mode-line-buffer-id ((,class (:foreground ,(funcall safe-get-color 'yellow) :weight bold))))
 
    ;; Whitespace
    `(whitespace-space ((,class (:background ,(funcall safe-get-color 'bg)
@@ -112,4 +112,4 @@
 
 ))
 
-(provide-theme 'apple_classic)
+(provide-theme 'lr_tokyonight)

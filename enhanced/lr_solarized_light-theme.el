@@ -1,4 +1,4 @@
-(deftheme solarized_light
+(deftheme lr_solarized_light
   "Solarized Light theme - Ethan Schoonover's precision color scheme.")
 
 (let* ((class '((class color) (min-colors 89)))
@@ -25,7 +25,7 @@
        (safe-get-color (lambda (key) (or (cdr (assoc key solarized_light-colors)) 'unspecified))))
 
   (custom-theme-set-faces
-   'solarized_light
+   'lr_solarized_light
 
    ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg) :foreground ,(funcall safe-get-color 'fg)))))
@@ -80,4 +80,4 @@
 
 ))
 
-(provide-theme 'solarized_light)
+(provide-theme 'lr_solarized_light)

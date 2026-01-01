@@ -1,39 +1,39 @@
-(deftheme zenburn
-  "Zenburn theme - A low contrast color scheme for Emacs.")
+(deftheme lr_catppuccinmocha
+  "Catppuccin Mocha theme - Soothing pastel theme for the high-spirited!")
 
 (let* ((class '((class color) (min-colors 89)))
-       (zenburn-colors
+       (catppuccinmocha-colors
         '(
-          (bg         . "#3f3f3f")  ;; Zenburn background
-          (fg         . "#dcdccc")  ;; Zenburn foreground
-          (cursor     . "#7f9f7f")  ;; Main color: green
-          (cursor-txt . "#3f3f3f")  ;; Zenburn cursor text
-          (selection  . "#4f4f4f")  ;; Zenburn selection
-          (selection-fg . "#dcdccc")  ;; Zenburn selection fg
-          (black      . "#3f3f3f")  ;; Zenburn black
-          (red        . "#cc9393")  ;; Zenburn red
-          (green      . "#7f9f7f")  ;; Zenburn green - MAIN COLOR
-          (yellow     . "#f0dfaf")  ;; Zenburn yellow
-          (blue       . "#8cd0d3")  ;; Zenburn blue
-          (magenta    . "#dc8cc3")  ;; Zenburn magenta
-          (cyan       . "#93e0e3")  ;; Zenburn cyan
-          (white      . "#dcdccc")  ;; Zenburn white
-          (br-black   . "#709080")  ;; Zenburn comment
-          (br-red     . "#cc9393")  ;; Zenburn bright red
-          (br-green   . "#7f9f7f")  ;; Zenburn bright green
-          (br-yellow  . "#f0dfaf")  ;; Zenburn bright yellow
-          (br-blue    . "#8cd0d3")  ;; Zenburn bright blue
-          (br-magenta . "#dc8cc3")  ;; Zenburn bright magenta
-          (br-cyan    . "#93e0e3")  ;; Zenburn bright cyan
-          (br-white   . "#ffffff")  ;; Zenburn bright white
+          (bg         . "#1e1e2e")  ;; Catppuccin Mocha base
+          (fg         . "#cdd6f4")  ;; Catppuccin Mocha text
+          (cursor     . "#f5c2e7")  ;; Main color: pink
+          (cursor-txt . "#1e1e2e")  ;; Catppuccin Mocha base
+          (selection  . "#313244")  ;; Catppuccin Mocha surface0
+          (selection-fg . "#cdd6f4")  ;; Catppuccin Mocha text
+          (black      . "#1e1e2e")  ;; Catppuccin Mocha base
+          (red        . "#f38ba8")  ;; Catppuccin Mocha red
+          (green      . "#a6e3a1")  ;; Catppuccin Mocha green
+          (yellow     . "#f9e2af")  ;; Catppuccin Mocha yellow
+          (blue       . "#89b4fa")  ;; Catppuccin Mocha blue
+          (magenta    . "#f5c2e7")  ;; Catppuccin Mocha pink - MAIN COLOR
+          (cyan       . "#94e2d5")  ;; Catppuccin Mocha teal
+          (white      . "#cdd6f4")  ;; Catppuccin Mocha text
+          (br-black   . "#6c7086")  ;; Catppuccin Mocha overlay0
+          (br-red     . "#f38ba8")  ;; Catppuccin Mocha red
+          (br-green   . "#a6e3a1")  ;; Catppuccin Mocha green
+          (br-yellow  . "#f9e2af")  ;; Catppuccin Mocha yellow
+          (br-blue    . "#89b4fa")  ;; Catppuccin Mocha blue
+          (br-magenta . "#f5c2e7")  ;; Catppuccin Mocha pink
+          (br-cyan    . "#94e2d5")  ;; Catppuccin Mocha teal
+          (br-white   . "#f5e0dc")  ;; Catppuccin Mocha rosewater
           ))
 
        ;; Helper to safely get color or 'unspecified
        (safe-get-color (lambda (key)
-                         (or (cdr (assoc key zenburn-colors)) 'unspecified))))
+                         (or (cdr (assoc key catppuccinmocha-colors)) 'unspecified))))
 
   (custom-theme-set-faces
-   'zenburn
+   'lr_catppuccinmocha
 
    ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg)
@@ -57,12 +57,12 @@
    `(line-number ((,class (:inherit default
                                   :foreground ,(funcall safe-get-color 'br-black)))))
    `(line-number-current-line ((,class (:inherit default
-                                               :foreground ,(funcall safe-get-color 'green)
+                                               :foreground ,(funcall safe-get-color 'magenta)
                                                :weight bold))))
    `(line-number-major-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
    `(line-number-minor-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
 
-   ;; Font lock faces - carefully tuned for Zenburn style
+   ;; Font lock faces - carefully tuned for Catppuccin Mocha style
    `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
    `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
    `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
@@ -77,16 +77,16 @@
    `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'br-white)))))
    `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'red) :weight bold))))
 
-   ;; Modeline faces - Zenburn style
+   ;; Modeline faces - Catppuccin Mocha style
    `(mode-line ((,class (:background ,(funcall safe-get-color 'bg)
                                      :foreground ,(funcall safe-get-color 'fg)))))
    `(mode-line-inactive ((,class (:background ,(funcall safe-get-color 'bg)
                                      :foreground ,(funcall safe-get-color 'fg)))))
-   `(mode-line-highlight ((,class (:background ,(funcall safe-get-color 'green)
+   `(mode-line-highlight ((,class (:background ,(funcall safe-get-color 'magenta)
                                                :foreground ,(funcall safe-get-color 'bg)
                                                :weight bold))))
    `(mode-line-emphasis ((,class (:weight bold))))
-   `(mode-line-buffer-id ((,class (:foreground ,(funcall safe-get-color 'yellow) :weight bold))))
+   `(mode-line-buffer-id ((,class (:foreground ,(funcall safe-get-color 'magenta) :weight bold))))
 
    ;; Whitespace
    `(whitespace-space ((,class (:background ,(funcall safe-get-color 'bg)
@@ -112,4 +112,4 @@
 
 ))
 
-(provide-theme 'zenburn)
+(provide-theme 'lr_catppuccinmocha)

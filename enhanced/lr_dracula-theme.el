@@ -1,39 +1,39 @@
-(deftheme gruvboxlight
-  "Gruvbox Light theme - Retro groove color scheme, light variant.")
+(deftheme lr_dracula
+  "Dracula theme - A dark theme for the colorblind and non-colorblind coders.")
 
 (let* ((class '((class color) (min-colors 89)))
-       (gruvboxlight-colors
+       (dracula-colors
         '(
-          (bg         . "#fbf1c7")  ;; Gruvbox Light background
-          (fg         . "#3c3836")  ;; Gruvbox Light foreground
-          (cursor     . "#79740e")  ;; Main color: green
-          (cursor-txt . "#fbf1c7")  ;; Gruvbox Light cursor text
-          (selection  . "#ebdbb2")  ;; Gruvbox Light selection
-          (selection-fg . "#3c3836")  ;; Gruvbox Light selection fg
-          (black      . "#fbf1c7")  ;; Gruvbox Light black
-          (red        . "#cc241d")  ;; Gruvbox Light red
-          (green      . "#98971a")  ;; Gruvbox Light green
-          (yellow     . "#d79921")  ;; Gruvbox Light yellow
-          (blue       . "#458588")  ;; Gruvbox Light blue
-          (magenta    . "#b16286")  ;; Gruvbox Light magenta
-          (cyan       . "#689d6a")  ;; Gruvbox Light cyan
-          (white      . "#a89984")  ;; Gruvbox Light white
-          (br-black   . "#928374")  ;; Gruvbox Light comment
-          (br-red     . "#9d0006")  ;; Gruvbox Light bright red
-          (br-green   . "#79740e")  ;; Gruvbox Light bright green - MAIN COLOR
-          (br-yellow  . "#b57614")  ;; Gruvbox Light bright yellow
-          (br-blue    . "#076678")  ;; Gruvbox Light bright blue
-          (br-magenta . "#8f3f71")  ;; Gruvbox Light bright magenta
-          (br-cyan    . "#427b58")  ;; Gruvbox Light bright cyan
-          (br-white   . "#3c3836")  ;; Gruvbox Light bright white
+          (bg         . "#282a36")  ;; Dracula background
+          (fg         . "#f8f8f2")  ;; Dracula foreground
+          (cursor     . "#bd93f9")  ;; Main color: purple
+          (cursor-txt . "#282a36")  ;; Dracula cursor text
+          (selection  . "#44475a")  ;; Dracula selection
+          (selection-fg . "#f8f8f2")  ;; Dracula selection fg
+          (black      . "#282a36")  ;; Dracula black
+          (red        . "#ff5555")  ;; Dracula red
+          (green      . "#50fa7b")  ;; Dracula green
+          (yellow     . "#f1fa8c")  ;; Dracula yellow
+          (blue       . "#bd93f9")  ;; Dracula purple - MAIN COLOR
+          (magenta    . "#ff79c6")  ;; Dracula pink
+          (cyan       . "#8be9fd")  ;; Dracula cyan
+          (white      . "#f8f8f2")  ;; Dracula white
+          (br-black   . "#6272a4")  ;; Dracula comment
+          (br-red     . "#ff6e6e")  ;; Dracula bright red
+          (br-green   . "#69ff94")  ;; Dracula bright green
+          (br-yellow  . "#ffffa5")  ;; Dracula bright yellow
+          (br-blue    . "#d6acff")  ;; Dracula bright purple
+          (br-magenta . "#ff92df")  ;; Dracula bright pink
+          (br-cyan    . "#a4ffff")  ;; Dracula bright cyan
+          (br-white   . "#ffffff")  ;; Dracula bright white
           ))
 
        ;; Helper to safely get color or 'unspecified
        (safe-get-color (lambda (key)
-                         (or (cdr (assoc key gruvboxlight-colors)) 'unspecified))))
+                         (or (cdr (assoc key dracula-colors)) 'unspecified))))
 
   (custom-theme-set-faces
-   'gruvboxlight
+   'lr_dracula
 
    ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg)
@@ -57,32 +57,32 @@
    `(line-number ((,class (:inherit default
                                   :foreground ,(funcall safe-get-color 'br-black)))))
    `(line-number-current-line ((,class (:inherit default
-                                               :foreground ,(funcall safe-get-color 'br-green)
+                                               :foreground ,(funcall safe-get-color 'blue)
                                                :weight bold))))
    `(line-number-major-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
    `(line-number-minor-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
 
-   ;; Font lock faces - carefully tuned for Gruvbox Light style
-   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'br-blue)))))
+   ;; Font lock faces - carefully tuned for Dracula style
+   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
    `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
    `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
-   `(font-lock-constant-face ((,class (:foreground ,(funcall safe-get-color 'br-magenta)))))
+   `(font-lock-constant-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
    `(font-lock-doc-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
-   `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'br-yellow) :slant italic))))
-   `(font-lock-function-name-face ((,class (:foreground ,(funcall safe-get-color 'br-green)))))
-   `(font-lock-keyword-face ((,class (:foreground ,(funcall safe-get-color 'br-red) :weight bold))))
-   `(font-lock-preprocessor-face ((,class (:foreground ,(funcall safe-get-color 'br-magenta)))))
-   `(font-lock-string-face ((,class (:foreground ,(funcall safe-get-color 'br-green)))))
-   `(font-lock-type-face ((,class (:foreground ,(funcall safe-get-color 'br-magenta)))))
-   `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
+   `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'yellow) :slant italic))))
+   `(font-lock-function-name-face ((,class (:foreground ,(funcall safe-get-color 'green)))))
+   `(font-lock-keyword-face ((,class (:foreground ,(funcall safe-get-color 'magenta) :weight bold))))
+   `(font-lock-preprocessor-face ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   `(font-lock-string-face ((,class (:foreground ,(funcall safe-get-color 'yellow)))))
+   `(font-lock-type-face ((,class (:foreground ,(funcall safe-get-color 'blue) :slant italic))))
+   `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'white)))))
    `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'red) :weight bold))))
 
-   ;; Modeline faces - Gruvbox Light style
+   ;; Modeline faces - Dracula style
    `(mode-line ((,class (:background ,(funcall safe-get-color 'bg)
                                      :foreground ,(funcall safe-get-color 'fg)))))
    `(mode-line-inactive ((,class (:background ,(funcall safe-get-color 'bg)
                                      :foreground ,(funcall safe-get-color 'fg)))))
-   `(mode-line-highlight ((,class (:background ,(funcall safe-get-color 'yellow)
+   `(mode-line-highlight ((,class (:background ,(funcall safe-get-color 'blue)
                                                :foreground ,(funcall safe-get-color 'bg)
                                                :weight bold))))
    `(mode-line-emphasis ((,class (:weight bold))))
@@ -112,4 +112,4 @@
 
 ))
 
-(provide-theme 'gruvboxlight)
+(provide-theme 'lr_dracula)

@@ -1,39 +1,39 @@
-(deftheme materialdark
-  "Material Dark theme - Google's Material Design dark theme.")
+(deftheme lr_apple_classic
+  "Apple Classic theme - Inspired by classic Mac OS aesthetics.")
 
 (let* ((class '((class color) (min-colors 89)))
-       (materialdark-colors
+       (apple_classic-colors
         '(
-          (bg         . "#263238")  ;; Material Dark background
-          (fg         . "#eeffff")  ;; Material Dark foreground
-          (cursor     . "#82aaff")  ;; Main color: blue
-          (cursor-txt . "#263238")  ;; Material Dark cursor text
-          (selection  . "#546e7a")  ;; Material Dark selection
-          (selection-fg . "#eeffff")  ;; Material Dark selection fg
-          (black      . "#263238")  ;; Material Dark black
-          (red        . "#ff5370")  ;; Material Dark red
-          (green      . "#c3e88d")  ;; Material Dark green
-          (yellow     . "#ffcb6b")  ;; Material Dark yellow
-          (blue       . "#82aaff")  ;; Material Dark blue - MAIN COLOR
-          (magenta    . "#c792ea")  ;; Material Dark magenta
-          (cyan       . "#89ddff")  ;; Material Dark cyan
-          (white      . "#eeffff")  ;; Material Dark white
-          (br-black   . "#546e7a")  ;; Material Dark comment
-          (br-red     . "#ff5370")  ;; Material Dark bright red
-          (br-green   . "#c3e88d")  ;; Material Dark bright green
-          (br-yellow  . "#ffcb6b")  ;; Material Dark bright yellow
-          (br-blue    . "#82aaff")  ;; Material Dark bright blue
-          (br-magenta . "#c792ea")  ;; Material Dark bright magenta
-          (br-cyan    . "#89ddff")  ;; Material Dark bright cyan
-          (br-white   . "#ffffff")  ;; Material Dark bright white
+          (bg         . "#FFFFFF")  ;; Classic white background
+          (fg         . "#000000")  ;; Pure black text
+          (cursor     . "#0000FF")  ;; Main color: blue
+          (cursor-txt . "#FFFFFF")  ;; White cursor text
+          (selection  . "#B5D5FF")  ;; Classic Mac blue selection
+          (selection-fg . "#000000")  ;; Black selection text
+          (black      . "#000000")  ;; Pure black
+          (red        . "#C41E3A")  ;; Classic Mac red
+          (green      . "#00852B")  ;; Classic Mac green
+          (yellow     . "#C7A500")  ;; Classic Mac yellow
+          (blue       . "#0000FF")  ;; Classic Mac blue - MAIN COLOR
+          (magenta    . "#A020F0")  ;; Classic Mac purple
+          (cyan       . "#0087B4")  ;; Classic Mac cyan
+          (white      . "#FFFFFF")  ;; Pure white
+          (br-black   . "#808080")  ;; Gray for comments
+          (br-red     . "#FF0000")  ;; Bright red
+          (br-green   . "#00A933")  ;; Bright green
+          (br-yellow  . "#FFB700")  ;; Bright yellow
+          (br-blue    . "#0066FF")  ;; Bright blue
+          (br-magenta . "#CC33FF")  ;; Bright magenta
+          (br-cyan    . "#00B7EB")  ;; Bright cyan
+          (br-white   . "#FFFFFF")  ;; Pure white
           ))
 
        ;; Helper to safely get color or 'unspecified
        (safe-get-color (lambda (key)
-                         (or (cdr (assoc key materialdark-colors)) 'unspecified))))
+                         (or (cdr (assoc key apple_classic-colors)) 'unspecified))))
 
   (custom-theme-set-faces
-   'materialdark
+   'lr_apple_classic
 
    ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg)
@@ -62,22 +62,22 @@
    `(line-number-major-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
    `(line-number-minor-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
 
-   ;; Font lock faces - carefully tuned for Material Dark style
-   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
+   ;; Font lock faces - carefully tuned for Apple Classic style
+   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
    `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
    `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
    `(font-lock-constant-face ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
    `(font-lock-doc-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
-   `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'yellow) :slant italic))))
-   `(font-lock-function-name-face ((,class (:foreground ,(funcall safe-get-color 'green)))))
-   `(font-lock-keyword-face ((,class (:foreground ,(funcall safe-get-color 'magenta) :weight bold))))
-   `(font-lock-preprocessor-face ((,class (:foreground ,(funcall safe-get-color 'red)))))
-   `(font-lock-string-face ((,class (:foreground ,(funcall safe-get-color 'yellow)))))
+   `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
+   `(font-lock-function-name-face ((,class (:foreground ,(funcall safe-get-color 'blue) :weight bold))))
+   `(font-lock-keyword-face ((,class (:foreground ,(funcall safe-get-color 'br-blue) :weight bold))))
+   `(font-lock-preprocessor-face ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
+   `(font-lock-string-face ((,class (:foreground ,(funcall safe-get-color 'green)))))
    `(font-lock-type-face ((,class (:foreground ,(funcall safe-get-color 'br-magenta)))))
    `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'br-white)))))
    `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'red) :weight bold))))
 
-   ;; Modeline faces - Material Dark style
+   ;; Modeline faces - Apple Classic style
    `(mode-line ((,class (:background ,(funcall safe-get-color 'bg)
                                      :foreground ,(funcall safe-get-color 'fg)))))
    `(mode-line-inactive ((,class (:background ,(funcall safe-get-color 'bg)
@@ -112,4 +112,4 @@
 
 ))
 
-(provide-theme 'materialdark)
+(provide-theme 'lr_apple_classic)

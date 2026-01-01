@@ -1,39 +1,39 @@
-(deftheme atom
-  "Atom theme - Inspired by the Atom editor's default dark theme.")
+(deftheme lr_materialdark
+  "Material Dark theme - Google's Material Design dark theme.")
 
 (let* ((class '((class color) (min-colors 89)))
-       (atom-colors
+       (materialdark-colors
         '(
-          (bg         . "#161719")  ;; Atom background
-          (fg         . "#c5c8c6")  ;; Atom foreground
-          (cursor     . "#b5bd68")  ;; Main color: green
-          (cursor-txt . "#161719")  ;; Atom cursor text
-          (selection  . "#373b41")  ;; Atom selection
-          (selection-fg . "#c5c8c6")  ;; Atom selection fg
-          (black      . "#161719")  ;; Atom black
-          (red        . "#cc6666")  ;; Atom red
-          (green      . "#b5bd68")  ;; Atom green - MAIN COLOR
-          (yellow     . "#f0c674")  ;; Atom yellow
-          (blue       . "#81a2be")  ;; Atom blue
-          (magenta    . "#b294bb")  ;; Atom magenta
-          (cyan       . "#8abeb7")  ;; Atom cyan
-          (white      . "#c5c8c6")  ;; Atom white
-          (br-black   . "#969896")  ;; Atom comment
-          (br-red     . "#cc6666")  ;; Atom bright red
-          (br-green   . "#b5bd68")  ;; Atom bright green
-          (br-yellow  . "#f0c674")  ;; Atom bright yellow
-          (br-blue    . "#81a2be")  ;; Atom bright blue
-          (br-magenta . "#b294bb")  ;; Atom bright magenta
-          (br-cyan    . "#8abeb7")  ;; Atom bright cyan
-          (br-white   . "#ffffff")  ;; Atom bright white
+          (bg         . "#263238")  ;; Material Dark background
+          (fg         . "#eeffff")  ;; Material Dark foreground
+          (cursor     . "#82aaff")  ;; Main color: blue
+          (cursor-txt . "#263238")  ;; Material Dark cursor text
+          (selection  . "#546e7a")  ;; Material Dark selection
+          (selection-fg . "#eeffff")  ;; Material Dark selection fg
+          (black      . "#263238")  ;; Material Dark black
+          (red        . "#ff5370")  ;; Material Dark red
+          (green      . "#c3e88d")  ;; Material Dark green
+          (yellow     . "#ffcb6b")  ;; Material Dark yellow
+          (blue       . "#82aaff")  ;; Material Dark blue - MAIN COLOR
+          (magenta    . "#c792ea")  ;; Material Dark magenta
+          (cyan       . "#89ddff")  ;; Material Dark cyan
+          (white      . "#eeffff")  ;; Material Dark white
+          (br-black   . "#546e7a")  ;; Material Dark comment
+          (br-red     . "#ff5370")  ;; Material Dark bright red
+          (br-green   . "#c3e88d")  ;; Material Dark bright green
+          (br-yellow  . "#ffcb6b")  ;; Material Dark bright yellow
+          (br-blue    . "#82aaff")  ;; Material Dark bright blue
+          (br-magenta . "#c792ea")  ;; Material Dark bright magenta
+          (br-cyan    . "#89ddff")  ;; Material Dark bright cyan
+          (br-white   . "#ffffff")  ;; Material Dark bright white
           ))
 
        ;; Helper to safely get color or 'unspecified
        (safe-get-color (lambda (key)
-                         (or (cdr (assoc key atom-colors)) 'unspecified))))
+                         (or (cdr (assoc key materialdark-colors)) 'unspecified))))
 
   (custom-theme-set-faces
-   'atom
+   'lr_materialdark
 
    ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg)
@@ -57,12 +57,12 @@
    `(line-number ((,class (:inherit default
                                   :foreground ,(funcall safe-get-color 'br-black)))))
    `(line-number-current-line ((,class (:inherit default
-                                               :foreground ,(funcall safe-get-color 'green)
+                                               :foreground ,(funcall safe-get-color 'blue)
                                                :weight bold))))
    `(line-number-major-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
    `(line-number-minor-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
 
-   ;; Font lock faces - carefully tuned for Atom style
+   ;; Font lock faces - carefully tuned for Material Dark style
    `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
    `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
    `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
@@ -77,7 +77,7 @@
    `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'br-white)))))
    `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'red) :weight bold))))
 
-   ;; Modeline faces - Atom style
+   ;; Modeline faces - Material Dark style
    `(mode-line ((,class (:background ,(funcall safe-get-color 'bg)
                                      :foreground ,(funcall safe-get-color 'fg)))))
    `(mode-line-inactive ((,class (:background ,(funcall safe-get-color 'bg)
@@ -112,4 +112,4 @@
 
 ))
 
-(provide-theme 'atom)
+(provide-theme 'lr_materialdark)

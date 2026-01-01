@@ -1,4 +1,4 @@
-(deftheme gruberdarker "Custom Variant of rexim/gruber-darker-theme")
+(deftheme lr_gruberdarker "Custom Variant of rexim/gruber-darker-theme")
 
 (let* ((class '((class color) (min-colors 89)))
        (gruberdarker-colors
@@ -21,7 +21,7 @@
        ;; Helper to safely get color or 'unspecified
        (safe-get-color (lambda (key) (or (cdr (assoc key gruberdarker-colors)) 'unspecified))))
 
-  (custom-theme-set-faces 'gruberdarker
+  (custom-theme-set-faces 'lr_gruberdarker
 
    ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg) :foreground ,(funcall safe-get-color 'fg)))))
@@ -73,4 +73,4 @@
 
 ))
 
-(provide-theme 'gruberdarker)
+(provide-theme 'lr_gruberdarker)

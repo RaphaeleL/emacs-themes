@@ -1,39 +1,39 @@
-(deftheme tokyonight
-  "Tokyo Night theme - A clean, dark theme inspired by the city of Tokyo.")
+(deftheme lr_nord
+  "Nord theme - An arctic, north-bluish color palette.")
 
 (let* ((class '((class color) (min-colors 89)))
-       (tokyonight-colors
+       (nord-colors
         '(
-          (bg         . "#1a1b26")  ;; Tokyo Night background
-          (fg         . "#a9b1d6")  ;; Tokyo Night foreground
-          (cursor     . "#c0caf5")  ;; Tokyo Night cursor
-          (cursor-txt . "#1a1b26")  ;; Tokyo Night cursor text
-          (selection  . "#33467c")  ;; Tokyo Night selection
-          (selection-fg . "#a9b1d6")  ;; Tokyo Night selection fg
-          (black      . "#1a1b26")  ;; Tokyo Night black
-          (red        . "#f7768e")  ;; Tokyo Night red
-          (green      . "#9ece6a")  ;; Tokyo Night green
-          (yellow     . "#e0af68")  ;; Tokyo Night yellow
-          (blue       . "#7aa2f7")  ;; Tokyo Night blue
-          (magenta    . "#bb9af7")  ;; Tokyo Night magenta
-          (cyan       . "#7dcfff")  ;; Tokyo Night cyan
-          (white      . "#c0caf5")  ;; Tokyo Night white
-          (br-black   . "#565a6e")  ;; Tokyo Night comment
-          (br-red     . "#f7768e")  ;; Tokyo Night bright red
-          (br-green   . "#9ece6a")  ;; Tokyo Night bright green
-          (br-yellow  . "#e0af68")  ;; Tokyo Night bright yellow
-          (br-blue    . "#7aa2f7")  ;; Tokyo Night bright blue
-          (br-magenta . "#bb9af7")  ;; Tokyo Night bright magenta
-          (br-cyan    . "#7dcfff")  ;; Tokyo Night bright cyan
-          (br-white   . "#c0caf5")  ;; Tokyo Night bright white
+          (bg         . "#2e3440")  ;; Nord background
+          (fg         . "#eceff4")  ;; Nord foreground
+          (cursor     . "#5e81ac")  ;; Main color: blue
+          (cursor-txt . "#2e3440")  ;; Nord cursor text
+          (selection  . "#434c5e")  ;; Nord selection
+          (selection-fg . "#eceff4")  ;; Nord selection fg
+          (black      . "#2e3440")  ;; Nord black
+          (red        . "#bf616a")  ;; Nord red
+          (green      . "#a3be8c")  ;; Nord green
+          (yellow     . "#ebcb8b")  ;; Nord yellow
+          (blue       . "#5e81ac")  ;; Nord blue - MAIN COLOR
+          (magenta    . "#b48ead")  ;; Nord magenta
+          (cyan       . "#88c0d0")  ;; Nord cyan
+          (white      . "#eceff4")  ;; Nord white
+          (br-black   . "#4c566a")  ;; Nord comment
+          (br-red     . "#bf616a")  ;; Nord bright red
+          (br-green   . "#a3be8c")  ;; Nord bright green
+          (br-yellow  . "#ebcb8b")  ;; Nord bright yellow
+          (br-blue    . "#5e81ac")  ;; Nord bright blue
+          (br-magenta . "#b48ead")  ;; Nord bright magenta
+          (br-cyan    . "#88c0d0")  ;; Nord bright cyan
+          (br-white   . "#eceff4")  ;; Nord bright white
           ))
 
        ;; Helper to safely get color or 'unspecified
        (safe-get-color (lambda (key)
-                         (or (cdr (assoc key tokyonight-colors)) 'unspecified))))
+                         (or (cdr (assoc key nord-colors)) 'unspecified))))
 
   (custom-theme-set-faces
-   'tokyonight
+   'lr_nord
 
    ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg)
@@ -62,7 +62,7 @@
    `(line-number-major-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
    `(line-number-minor-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
 
-   ;; Font lock faces - carefully tuned for Tokyo Night style
+   ;; Font lock faces - carefully tuned for Nord style
    `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
    `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
    `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
@@ -70,14 +70,14 @@
    `(font-lock-doc-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
    `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'yellow) :slant italic))))
    `(font-lock-function-name-face ((,class (:foreground ,(funcall safe-get-color 'green)))))
-   `(font-lock-keyword-face ((,class (:foreground ,(funcall safe-get-color 'blue) :weight bold))))
+   `(font-lock-keyword-face ((,class (:foreground ,(funcall safe-get-color 'magenta) :weight bold))))
    `(font-lock-preprocessor-face ((,class (:foreground ,(funcall safe-get-color 'red)))))
    `(font-lock-string-face ((,class (:foreground ,(funcall safe-get-color 'yellow)))))
    `(font-lock-type-face ((,class (:foreground ,(funcall safe-get-color 'br-magenta)))))
    `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'br-white)))))
    `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'red) :weight bold))))
 
-   ;; Modeline faces - Tokyo Night style
+   ;; Modeline faces - Nord style
    `(mode-line ((,class (:background ,(funcall safe-get-color 'bg)
                                      :foreground ,(funcall safe-get-color 'fg)))))
    `(mode-line-inactive ((,class (:background ,(funcall safe-get-color 'bg)
@@ -112,4 +112,4 @@
 
 ))
 
-(provide-theme 'tokyonight)
+(provide-theme 'lr_nord)

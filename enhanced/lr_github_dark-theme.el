@@ -1,39 +1,39 @@
-(deftheme doomone
-  "Doom One theme - A dark theme inspired by Doom Emacs.")
+(deftheme lr_github_dark
+  "GitHub Dark theme - GitHub's official dark theme for code editors.")
 
 (let* ((class '((class color) (min-colors 89)))
-       (doomone-colors
+       (github_dark-colors
         '(
-          (bg         . "#282c34")  ;; Doom One background
-          (fg         . "#bbc2cf")  ;; Doom One foreground
-          (cursor     . "#51afef")  ;; Main color: blue
-          (cursor-txt . "#282c34")  ;; Doom One cursor text
-          (selection  . "#3e4451")  ;; Doom One selection
-          (selection-fg . "#bbc2cf")  ;; Doom One selection fg
-          (black      . "#282c34")  ;; Doom One black
-          (red        . "#ff6c6b")  ;; Doom One red
-          (green      . "#98be65")  ;; Doom One green
-          (yellow     . "#ecbe7b")  ;; Doom One yellow
-          (blue       . "#51afef")  ;; Doom One blue - MAIN COLOR
-          (magenta    . "#c678dd")  ;; Doom One magenta
-          (cyan       . "#46d9ff")  ;; Doom One cyan
-          (white      . "#dfdfdf")  ;; Doom One white
-          (br-black   . "#5b6268")  ;; Doom One comment
-          (br-red     . "#ff6c6b")  ;; Doom One bright red
-          (br-green   . "#98be65")  ;; Doom One bright green
-          (br-yellow  . "#ecbe7b")  ;; Doom One bright yellow
-          (br-blue    . "#51afef")  ;; Doom One bright blue
-          (br-magenta . "#c678dd")  ;; Doom One bright magenta
-          (br-cyan    . "#46d9ff")  ;; Doom One bright cyan
-          (br-white   . "#ffffff")  ;; Doom One bright white
+          (bg         . "#0d1117")  ;; GitHub Dark background
+          (fg         . "#c9d1d9")  ;; GitHub Dark foreground
+          (cursor     . "#7ee787")  ;; Main color: green
+          (cursor-txt . "#0d1117")  ;; GitHub Dark cursor text
+          (selection  . "#21262d")  ;; GitHub Dark selection
+          (selection-fg . "#c9d1d9")  ;; GitHub Dark selection fg
+          (black      . "#0d1117")  ;; GitHub Dark black
+          (red        . "#ff7b72")  ;; GitHub Dark red
+          (green      . "#7ee787")  ;; GitHub Dark green - MAIN COLOR
+          (yellow     . "#ffa657")  ;; GitHub Dark yellow
+          (blue       . "#79c0ff")  ;; GitHub Dark blue
+          (magenta    . "#d2a8ff")  ;; GitHub Dark magenta
+          (cyan       . "#a5d6ff")  ;; GitHub Dark cyan
+          (white      . "#f0f6fc")  ;; GitHub Dark white
+          (br-black   . "#8b949e")  ;; GitHub Dark comment
+          (br-red     . "#ff7b72")  ;; GitHub Dark bright red
+          (br-green   . "#7ee787")  ;; GitHub Dark bright green
+          (br-yellow  . "#ffa657")  ;; GitHub Dark bright yellow
+          (br-blue    . "#79c0ff")  ;; GitHub Dark bright blue
+          (br-magenta . "#d2a8ff")  ;; GitHub Dark bright magenta
+          (br-cyan    . "#a5d6ff")  ;; GitHub Dark bright cyan
+          (br-white   . "#f0f6fc")  ;; GitHub Dark bright white
           ))
 
        ;; Helper to safely get color or 'unspecified
        (safe-get-color (lambda (key)
-                         (or (cdr (assoc key doomone-colors)) 'unspecified))))
+                         (or (cdr (assoc key github_dark-colors)) 'unspecified))))
 
   (custom-theme-set-faces
-   'doomone
+   'lr_github_dark
 
    ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg)
@@ -57,13 +57,13 @@
    `(line-number ((,class (:inherit default
                                   :foreground ,(funcall safe-get-color 'br-black)))))
    `(line-number-current-line ((,class (:inherit default
-                                               :foreground ,(funcall safe-get-color 'blue)
+                                               :foreground ,(funcall safe-get-color 'green)
                                                :weight bold))))
    `(line-number-major-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
    `(line-number-minor-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
 
-   ;; Font lock faces - carefully tuned for Doom One style
-   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
+   ;; Font lock faces - carefully tuned for GitHub Dark style
+   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
    `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
    `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
    `(font-lock-constant-face ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
@@ -77,7 +77,7 @@
    `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'br-white)))))
    `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'red) :weight bold))))
 
-   ;; Modeline faces - Doom One style
+   ;; Modeline faces - GitHub Dark style
    `(mode-line ((,class (:background ,(funcall safe-get-color 'bg)
                                      :foreground ,(funcall safe-get-color 'fg)))))
    `(mode-line-inactive ((,class (:background ,(funcall safe-get-color 'bg)
@@ -86,30 +86,6 @@
                                                :foreground ,(funcall safe-get-color 'bg)
                                                :weight bold))))
    `(mode-line-emphasis ((,class (:weight bold))))
-   `(mode-line-buffer-id ((,class (:foreground ,(funcall safe-get-color 'yellow) :weight bold))))
+   `(mode-line-buffer-id ((,class (:foreground ,(funcall safe-get-color 'blue) :weight bold))))
 
-   ;; Whitespace
-   `(whitespace-space ((,class (:background ,(funcall safe-get-color 'bg)
-                                            :foreground ,(funcall safe-get-color 'br-black)))))
-   `(whitespace-tab ((,class (:background ,(funcall safe-get-color 'bg)
-                                          :foreground ,(funcall safe-get-color 'br-black)))))
-   `(whitespace-hspace ((,class (:background ,(funcall safe-get-color 'bg)
-                                             :foreground ,(funcall safe-get-color 'br-black)))))
-   `(whitespace-line ((,class (:background ,(funcall safe-get-color 'br-black)
-                                           :foreground ,(funcall safe-get-color 'red)))))
-   `(whitespace-newline ((,class (:background ,(funcall safe-get-color 'bg)
-                                              :foreground ,(funcall safe-get-color 'br-black)))))
-   `(whitespace-trailing ((,class (:background ,(funcall safe-get-color 'red)
-                                               :foreground ,(funcall safe-get-color 'red)))))
-   `(whitespace-empty ((,class (:background ,(funcall safe-get-color 'yellow)
-                                            :foreground ,(funcall safe-get-color 'yellow)))))
-   `(whitespace-indentation ((,class (:background ,(funcall safe-get-color 'yellow)
-                                                  :foreground ,(funcall safe-get-color 'red)))))
-   `(whitespace-space-after-tab ((,class (:background ,(funcall safe-get-color 'yellow)
-                                                       :foreground ,(funcall safe-get-color 'yellow)))))
-   `(whitespace-space-before-tab ((,class (:background ,(funcall safe-get-color 'br-black)
-                                                        :foreground ,(funcall safe-get-color 'br-black)))))
-
-))
-
-(provide-theme 'doomone)
+(provide-theme 'lr_github_dark)

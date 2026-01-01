@@ -1,39 +1,39 @@
-(deftheme solarized_dark
-  "Solarized dark theme - Ethan Schoonover's precision color scheme.")
+(deftheme lr_zenburn
+  "Zenburn theme - A low contrast color scheme for Emacs.")
 
 (let* ((class '((class color) (min-colors 89)))
-       (solarized_dark-colors
+       (zenburn-colors
         '(
-          (bg         . "#1a1b25")  ;; Base 3 - background
-          (fg         . "#c2caf1")  ;; Base 00 - primary content
-          (cursor     . "#c2caf1")  ;; Main color: blue
-          (cursor-txt . "#1a1b25")  ;; Base 3 - background
-          (selection  . "#2a3454")  ;; Base 2 - selection
-          (selection-fg . "#c2caf1")  ;; Base 01 - emphasized content
-          (black      . "#15161d")  ;; palette 0
-          (red        . "#e77d8f")  ;; palette 1
-          (green      . "#a8cd76")  ;; palette 2
-          (yellow     . "#d8b172")  ;; palette 3
-          (blue       . "#82a1f1")  ;; palette 4
-          (magenta    . "#b69bf1")  ;; palette 5
-          (cyan       . "#90cdfa")  ;; palette 6
-          (white      . "#aab1d3")  ;; palette 7
-          (br-black   . "#424866")  ;; palette 8
-          (br-red     . "#e77d8f")  ;; palette 9
-          (br-green   . "#a8cd76")  ;; palette 10
-          (br-yellow  . "#d8b172")  ;; palette 11
-          (br-blue    . "#82a1f1")  ;; palette 12
-          (br-magenta . "#b69bf1")  ;; palette 13
-          (br-cyan    . "#90cdfa")  ;; palette 14
-          (br-white   . "#c2caf1")  ;; palette 15
+          (bg         . "#3f3f3f")  ;; Zenburn background
+          (fg         . "#dcdccc")  ;; Zenburn foreground
+          (cursor     . "#7f9f7f")  ;; Main color: green
+          (cursor-txt . "#3f3f3f")  ;; Zenburn cursor text
+          (selection  . "#4f4f4f")  ;; Zenburn selection
+          (selection-fg . "#dcdccc")  ;; Zenburn selection fg
+          (black      . "#3f3f3f")  ;; Zenburn black
+          (red        . "#cc9393")  ;; Zenburn red
+          (green      . "#7f9f7f")  ;; Zenburn green - MAIN COLOR
+          (yellow     . "#f0dfaf")  ;; Zenburn yellow
+          (blue       . "#8cd0d3")  ;; Zenburn blue
+          (magenta    . "#dc8cc3")  ;; Zenburn magenta
+          (cyan       . "#93e0e3")  ;; Zenburn cyan
+          (white      . "#dcdccc")  ;; Zenburn white
+          (br-black   . "#709080")  ;; Zenburn comment
+          (br-red     . "#cc9393")  ;; Zenburn bright red
+          (br-green   . "#7f9f7f")  ;; Zenburn bright green
+          (br-yellow  . "#f0dfaf")  ;; Zenburn bright yellow
+          (br-blue    . "#8cd0d3")  ;; Zenburn bright blue
+          (br-magenta . "#dc8cc3")  ;; Zenburn bright magenta
+          (br-cyan    . "#93e0e3")  ;; Zenburn bright cyan
+          (br-white   . "#ffffff")  ;; Zenburn bright white
           ))
 
        ;; Helper to safely get color or 'unspecified
        (safe-get-color (lambda (key)
-                         (or (cdr (assoc key solarized_dark-colors)) 'unspecified))))
+                         (or (cdr (assoc key zenburn-colors)) 'unspecified))))
 
   (custom-theme-set-faces
-   'solarized_dark
+   'lr_zenburn
 
    ;; Basic faces
    `(default ((,class (:background ,(funcall safe-get-color 'bg)
@@ -42,11 +42,11 @@
                                   :foreground ,(funcall safe-get-color 'cursor-txt)))))
    `(region ((,class (:background ,(funcall safe-get-color 'selection)
                                   :foreground ,(funcall safe-get-color 'selection-fg)))))
-   `(highdark ((,class (:background ,(funcall safe-get-color 'selection)))))
+   `(highlight ((,class (:background ,(funcall safe-get-color 'selection)))))
    `(fringe ((,class (:background ,(funcall safe-get-color 'bg)))))
    `(minibuffer-prompt ((,class (:foreground ,(funcall safe-get-color 'blue)
                                              :weight bold))))
-   ;; `(show-paren-match ((,class (:background ,(funcall safe-get-color 'br-cyan)
+   ;; `(show-paren-match ((,class (:background ,(funcall safe-get-color 'br-blue)
    ;;                                          :foreground ,(funcall safe-get-color 'bg)
    ;;                                          :weight bold))))
    ;; `(show-paren-mismatch ((,class (:background ,(funcall safe-get-color 'red)
@@ -57,32 +57,32 @@
    `(line-number ((,class (:inherit default
                                   :foreground ,(funcall safe-get-color 'br-black)))))
    `(line-number-current-line ((,class (:inherit default
-                                               :foreground ,(funcall safe-get-color 'blue)
+                                               :foreground ,(funcall safe-get-color 'green)
                                                :weight bold))))
    `(line-number-major-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
    `(line-number-minor-tick ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
 
-   ;; Font lock faces - carefully tuned for Solarized dark style
-   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
+   ;; Font lock faces - carefully tuned for Zenburn style
+   `(font-lock-builtin-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
    `(font-lock-comment-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
    `(font-lock-comment-delimiter-face ((,class (:foreground ,(funcall safe-get-color 'br-black)))))
-   `(font-lock-constant-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
+   `(font-lock-constant-face ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
    `(font-lock-doc-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
-   `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'br-black) :slant italic))))
-   `(font-lock-function-name-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
-   `(font-lock-keyword-face ((,class (:foreground ,(funcall safe-get-color 'br-red) :weight bold))))
-   `(font-lock-preprocessor-face ((,class (:foreground ,(funcall safe-get-color 'br-magenta)))))
-   `(font-lock-string-face ((,class (:foreground ,(funcall safe-get-color 'cyan)))))
-   `(font-lock-type-face ((,class (:foreground ,(funcall safe-get-color 'yellow)))))
-   `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'blue)))))
+   `(font-lock-doc-string-face ((,class (:foreground ,(funcall safe-get-color 'yellow) :slant italic))))
+   `(font-lock-function-name-face ((,class (:foreground ,(funcall safe-get-color 'green)))))
+   `(font-lock-keyword-face ((,class (:foreground ,(funcall safe-get-color 'magenta) :weight bold))))
+   `(font-lock-preprocessor-face ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   `(font-lock-string-face ((,class (:foreground ,(funcall safe-get-color 'yellow)))))
+   `(font-lock-type-face ((,class (:foreground ,(funcall safe-get-color 'br-magenta)))))
+   `(font-lock-variable-name-face ((,class (:foreground ,(funcall safe-get-color 'br-white)))))
    `(font-lock-warning-face ((,class (:foreground ,(funcall safe-get-color 'red) :weight bold))))
 
-   ;; Modeline faces - Solarized dark style
+   ;; Modeline faces - Zenburn style
    `(mode-line ((,class (:background ,(funcall safe-get-color 'bg)
                                      :foreground ,(funcall safe-get-color 'fg)))))
    `(mode-line-inactive ((,class (:background ,(funcall safe-get-color 'bg)
                                      :foreground ,(funcall safe-get-color 'fg)))))
-   `(mode-line-highdark ((,class (:background ,(funcall safe-get-color 'yellow)
+   `(mode-line-highlight ((,class (:background ,(funcall safe-get-color 'green)
                                                :foreground ,(funcall safe-get-color 'bg)
                                                :weight bold))))
    `(mode-line-emphasis ((,class (:weight bold))))
@@ -112,4 +112,4 @@
 
 ))
 
-(provide-theme 'solarized_dark)
+(provide-theme 'lr_zenburn)
