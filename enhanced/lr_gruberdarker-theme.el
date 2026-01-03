@@ -133,19 +133,46 @@
    `(diff-removed ((,class (:foreground ,(funcall safe-get-color 'red+1) :background nil))))
    `(diff-added ((,class (:foreground ,(funcall safe-get-color 'green) :background nil))))
 
-   ;; Dired
+   ;; Dired + DiredFL
    `(dired-directory ((,class (:foreground ,(funcall safe-get-color 'blue) :weight bold))))
    `(dired-header ((,class (:foreground ,(funcall safe-get-color 'yellow) :weight bold))))
    `(dired-ignored ((,class (:foreground ,(funcall safe-get-color 'quartz)))))
    `(dired-flagged ((,class :foreground ,(funcall safe-get-color 'red) :weight bold)))
    `(dired-mark ((,class :foreground ,(funcall safe-get-color 'yellow) :weight bold)))
    `(dired-marked ((,class :foreground ,(funcall safe-get-color 'yellow) :weight bold)))
-
    ;; `(dired-ignored ((,class :foreground ,(funcall safe-get-color 'dired))))
    ;; `(dired-perm-write ((,class :foreground ,(funcall safe-get-color 'red))))
    ;; `(dired-warning ((,class :foreground ,(funcall safe-get-color 'red))))
    ;; `(dired-symlink ((,class :foreground ,(funcall safe-get-color 'red))))
    ;; `(dired-broken-symlink ((,class :foreground ,(funcall safe-get-color 'red))))
+
+   ;; `(diredfl-dir-heading ((,class (:foreground ,(funcall safe-get-color 'yellow) :weight bold))))
+   ;; `(diredfl-dir-name ((,class (:foreground ,(funcall safe-get-color 'quartz) :weight bold))))
+   ;; `(diredfl-file-name ((,class (:foreground ,(funcall safe-get-color 'weight)))))
+   ;; `(diredfl-file-suffix ((,class (:foreground ,(funcall safe-get-color 'weight)))))
+   ;; `(diredfl-dir-priv ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
+   ;; `(diredfl-exec-priv ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
+   ;; `(diredfl-other-priv ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
+   ;; `(diredfl-rare-priv ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
+   ;; `(diredfl-read-priv ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
+   ;; `(diredfl-link-priv ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
+   ;; `(diredfl-no-priv ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
+   ;; `(diredfl-write-priv ((,class (:foreground ,(funcall safe-get-color 'magenta)))))
+
+   ;; `(diredfl-executable-tag ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   ;; `(diredfl-flag-mark ((,class -select (:foreground ,(funcall safe-get-color 'red)))))
+   ;; `(diredfl-flag-mark-line ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   ;; `(diredfl-ignored-file-name ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   ;; `(diredfl-number ((,class (:foreground ,(funcall safe-get-color 'white)))))
+   ;; `(diredfl-symlink ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   ;; `(diredfl-tagged-autofile-name ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   ;; `(diredfl-autofile-name ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   ;; `(diredfl-compressed-file-name ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   ;; `(diredfl-compressed-file-suffix ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   ;; `(diredfl-date-time ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   ;; `(diredfl-deletion ((,class (:foreground ,(funcall safe-get-color 'red)))))
+   ;; `(diredfl-deletion-file-name ((,class (:foreground ,(funcall safe-get-color 'red)))))
+
 
    ;; Ido
    `(ido-first-match ((,class (:foreground ,(funcall safe-get-color 'yellow)))))
