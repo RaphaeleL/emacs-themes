@@ -88,8 +88,8 @@
 
    ;; Modeline faces - Gruber-darker style
    `(mode-line                               ((,class :background ,(funcall safe-get-color 'bg) :foreground ,(funcall safe-get-color 'fg))))
-   `(mode-line-inactive                      ((,class :background ,(funcall safe-get-color 'bg) :foreground ,)))
-   `(mode-line-highlight                     ((,class :background ,(funcall safe-get-color 'yellow) :foreground , :weight bold)))
+   `(mode-line-inactive                      ((,class :background ,(funcall safe-get-color 'bg))))
+   `(mode-line-highlight                     ((,class :background ,(funcall safe-get-color 'yellow) :weight bold)))
    `(mode-line-emphasis                      ((,class :weight bold)))
    `(mode-line-buffer-id                     ((,class :foreground ,(funcall safe-get-color 'yellow) :weight bold)))
 
@@ -232,5 +232,6 @@
    `(orderless-match-face-3                  ((,class :foreground ,(funcall safe-get-color 'quartz))))
 
 ))
+
 
 (provide-theme 'lr_gruberdarker)
