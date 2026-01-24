@@ -130,8 +130,8 @@
    `(custom-state                            ((,class :foreground ,(funcall safe-get-color 'green))))
 
    ;; Diff
-   `(diff-removed                            ((,class :foreground ,(funcall safe-get-color 'red+1) :background nil)))
-   `(diff-added                              ((,class :foreground ,(funcall safe-get-color 'green) :background nil)))
+   `(diff-removed                            ((,class :foreground ,(funcall safe-get-color 'red+1) :background unspecified)))
+   `(diff-added                              ((,class :foreground ,(funcall safe-get-color 'green) :background unspecified)))
 
    ;; Dired + DiredFL
    `(dired-directory                         ((,class :foreground ,(funcall safe-get-color 'blue) :weight bold)))
