@@ -60,10 +60,10 @@
    ;; `(show-paren-mismatch ((,class (:background ,(funcall safe-get-color 'red) :foreground ,(funcall safe-get-color 'bg) :weight bold))))
 
    ;; Line number faces - main color for current line
-   `(line-number                             ((,class :foreground ,(funcall safe-get-color 'grey))))
-   `(line-number-current-line                ((,class :foreground ,(funcall safe-get-color 'blue) :weight bold)))
-   `(line-number-major-tick                  ((,class :foreground ,(funcall safe-get-color 'grey))))
-   `(line-number-minor-tick                  ((,class :foreground ,(funcall safe-get-color 'grey))))
+   `(line-number                             ((,class :foreground ,(funcall safe-get-color 'grey) :inherit default)))
+   `(line-number-current-line                ((,class :foreground ,(funcall safe-get-color 'blue) :inherit default :weight bold)))
+   `(line-number-major-tick                  ((,class :foreground ,(funcall safe-get-color 'grey) :inherit default)))
+   `(line-number-minor-tick                  ((,class :foreground ,(funcall safe-get-color 'grey) :inherit default)))
 
    ;; Font lock faces - carefully tuned for Solarized Light style
    `(font-lock-bracket-face                  ((,class :foreground ,(funcall safe-get-color 'fg))))

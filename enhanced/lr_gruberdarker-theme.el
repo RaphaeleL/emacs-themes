@@ -52,10 +52,10 @@
    `(minibuffer-prompt                       ((,class :foreground ,(funcall safe-get-color 'yellow) :weight bold)))
 
    ;; Line number faces - main color for current line
-   `(line-number                             ((,class :foreground ,(funcall safe-get-color 'grey))))
-   `(line-number-current-line                ((,class :foreground ,(funcall safe-get-color 'yellow) :weight bold)))
-   `(line-number-major-tick                  ((,class :foreground ,(funcall safe-get-color 'grey))))
-   `(line-number-minor-tick                  ((,class :foreground ,(funcall safe-get-color 'grey))))
+   `(line-number                             ((,class :foreground ,(funcall safe-get-color 'grey) :inherit default)))
+   `(line-number-current-line                ((,class :foreground ,(funcall safe-get-color 'yellow) :inherit default :weight bold)))
+   `(line-number-major-tick                  ((,class :foreground ,(funcall safe-get-color 'grey) :inherit default)))
+   `(line-number-minor-tick                  ((,class :foreground ,(funcall safe-get-color 'grey) :inherit default)))
 
    ;; Font lock faces - carefully tuned for Gruber-darker style
    `(font-lock-bracket-face                  ((,class :foreground ,(funcall safe-get-color 'fg))))
