@@ -60,8 +60,8 @@
    ;; Font lock faces - carefully tuned for Gruber-darker style
    `(font-lock-bracket-face                  ((,class :foreground ,(funcall safe-get-color 'fg))))
    `(font-lock-builtin-face                  ((,class :foreground ,(funcall safe-get-color 'yellow))))
-   `(font-lock-comment-face                  ((,class :foreground ,(funcall safe-get-color 'grey) :slant italic)))
-   `(font-lock-comment-delimiter-face        ((,class :foreground ,(funcall safe-get-color 'grey))))
+   `(font-lock-comment-face                  ((,class :foreground ,(funcall safe-get-color 'brown) :slant italic)))
+   `(font-lock-comment-delimiter-face        ((,class :foreground ,(funcall safe-get-color 'brown))))
    `(font-lock-constant-face                 ((,class :foreground ,(funcall safe-get-color 'blue))))
    `(font-lock-delimiter-face                ((,class :foreground ,(funcall safe-get-color 'fg))))
    `(font-lock-doc-face                      ((,class :foreground ,(funcall safe-get-color 'grey) :slant italic)))
