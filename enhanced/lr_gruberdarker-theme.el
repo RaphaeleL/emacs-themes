@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (deftheme lr_gruberdarker "Custom Variant of rexim/gruber-darker-theme")
 
 (let* ((class '((class color) (min-colors 89)))
